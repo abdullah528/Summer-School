@@ -70,35 +70,60 @@ html {
     height: auto; 
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-}
 
+
+/* Dropdown Menu Styling */
 .stylish-dropdown {
-    background: #f8f9fa;
-    border-radius: 10px;
+    background: #f8f9fa; /* Light gray background */
+    border-radius: 15px;
     padding: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border: none;
+    min-width: 200px; /* Adjust width as needed */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
+/* Dropdown Items */
 .stylish-dropdown .dropdown-item {
-    font-size: 1rem;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    width: 100%; /* Full width to cover hover */
+    padding: 12px 15px;
     color: #333;
-    transition: background 0.3s ease-in-out;
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out, color 0.3s;
+    border-radius: 5px; /* Soft rounded corners */
 }
 
+/* Hover Effect */
 .stylish-dropdown .dropdown-item:hover {
-    background: #d32c0e;
-    color: black;
+    background: #d32c0e; /* Red background on hover */
+    color: white; /* White text for better contrast */
     font-weight: bold;
-    border-radius: 5px;
+}
+
+/* Ensure Dropdown Appears on Hover */
+.nav-item.dropdown .dropdown-menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .nav-item.dropdown:hover .dropdown-menu {
     display: block;
+    opacity: 1;
 }
+
+/* Remove Extra Margins and Padding */
+.stylish-dropdown {
+    padding: 0;
+}
+
+.stylish-dropdown .dropdown-item {
+    margin: 0;
+}
+
 
 /* Header & Carousel */
 header.masthead {
